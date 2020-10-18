@@ -1,0 +1,19 @@
+builddemo:builddemo.o add.o
+gcc -o buildemo builddemo.o add.o;
+
+
+
+
+builddemo.o:builddemo.c
+gcc -c -o builddemo.o builddemo.c
+
+
+
+add.o:add.c
+	gcc -c add.o add.c
+
+
+
+
+
+
