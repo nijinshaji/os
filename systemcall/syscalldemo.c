@@ -13,7 +13,7 @@ if(-1==fd){
 	return -1;
 }
 
-write(fd,"nijin",5);
+write(fd,"nijin shaji",11);
 close(fd);
 return 0;
 }
