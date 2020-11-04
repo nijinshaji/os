@@ -2,12 +2,12 @@
 #include<unistd.h>
 int main()
 {
-	int x[2];
 	pid_t id;
 	int pfd[2];
 	pipe(pfd);
 	id=fork();
 	if(0==id){
+		int x[2];
 		close(pfd[1]);
 		read(pfd[0],x, sizeof(x));
 		for(int i=0;i<2;i++)
@@ -18,8 +18,7 @@ int main()
 	}
 	else{
 		close(pfd[0]);
-		x[0]=1;
-		x[1]=2;
+		int x[2]={1,2};
         	write(pfd[1], x, sizeof(x));
 		for(int i=0;i<2;i++)
 		{
